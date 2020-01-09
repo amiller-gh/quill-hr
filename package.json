@@ -1,6 +1,6 @@
 {
   "name": "quill-hr",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A quill editor module for horizontal rules.",
   "main": "dist/index.js",
   "scripts": {

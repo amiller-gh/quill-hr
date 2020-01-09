@@ -8,9 +8,9 @@ function addStyleString(id, str) {
 	node.id = id;
 	node.innerHTML = str;
   if (document.readyState === 'loading') {
-    return document.addEventListener('DOMContentLoaded', () => document.body.appendChild(node));
+    return document.addEventListener('DOMContentLoaded', () => document.head.appendChild(node));
   }
-  document.body.appendChild(node);
+  document.head.appendChild(node);
 }
 
 const CUSTOM_EVENT_NAME = guid('quill-hr-event');

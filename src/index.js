@@ -182,7 +182,11 @@ class QuillHr {
 	async insert (quill) {
 		const id = guid();
 		const range = quill.getSelection(true);
-		const index = (quill.getSelection() || {}).index || quill.getLength();
+		let index = (quill.getSelection() || {}).index;
+		if (!Number.isInteger(index)) {
+			index = quill.getLength();
+		}
+
 		quill.deleteText(range.index, range.length, quill.constructor.sources.SILENT);
 		quill.insertEmbed(index, 'divider', {
 			id,
